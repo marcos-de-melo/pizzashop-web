@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
+import { Button } from './components/ui/button'
+import './global.css'
 
 export function App() {
 
   return (
-    <h1>Hello World</h1>
+    <div className='flex justify-center items-center h-screen'>
+      <Button>Enviar</Button>
+    </div>
   )
 }
 
