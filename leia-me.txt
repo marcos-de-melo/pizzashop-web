@@ -1,1 +1,3 @@
 React Helmet (SEO) foi comitado já finalizado
+
+commit -> Explicando Theme Toggle - nada foi alterado - só explicação mesmo
