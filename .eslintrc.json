@@ -1,6 +1,6 @@
 {
         "extends": ["@rocketseat/eslint-config/react"],
-        "publins": ["simple-import-sort"],
+        "plugins": ["simple-import-sort"],
         "rules": {
                 "simple-import-sort/imports": "error"
         }
