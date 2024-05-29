@@ -77,7 +77,11 @@ export function SignUp() {
 
             <div className="space-y-2">
               <Label htmlFor="managerName">Seu nome</Label>
-              <Input id="managerName" type="text" {...register('email')} />
+              <Input
+                id="managerName"
+                type="text"
+                {...register('managerName')}
+              />
             </div>
 
             <div className="space-y-2">
