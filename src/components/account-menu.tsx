@@ -14,6 +14,9 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
 import { Skeleton } from './ui/skeleton'
+import { Dialog, DialogTrigger } from './ui/dialog'
+
+import { StoreProfileDialog } from './store-profile-dialog'
 
 export function AccountMenu() {
   const { data: profile, isLoading: isLoadingProfile } = useQuery({
@@ -27,6 +30,8 @@ export function AccountMenu() {
     })
 
   return (
+
+    <Dialog>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
@@ -58,15 +63,20 @@ export function AccountMenu() {
           )}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <Building className="mr-2 h-4 w-4" />
-          <span>Perfil da Loja</span>
-        </DropdownMenuItem>
+        <DialogTrigger asChild>
+          <DropdownMenuItem>
+            <Building className="mr-2 h-4 w-4" />
+            <span>Perfil da Loja</span>
+          </DropdownMenuItem>
+        </DialogTrigger>
         <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
           <LogOut className="mr-2 h-4 w-4" />
           <span>Sair</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+
+    <StoreProfileDialog />
+    </Dialog>
   )
 }
