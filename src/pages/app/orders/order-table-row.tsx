@@ -1,25 +1,21 @@
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 import { ArrowRight, Search, X } from 'lucide-react'
 
+import { OrderStatus } from '@/components/order-status'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogTrigger } from '@/components/ui/dialog'
 import { TableCell, TableRow } from '@/components/ui/table'
 
 import { OrderDetails } from './order-details'
 
-import { formatDistanceToNow } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
-
-
-import { OrderStatus } from '@/components/order-status'
-
 export interface OrderTableRowProps {
   order: {
     orderId: string
     createdAt: Date
-    status: "pending" | "canceled" | "processing" | "delivering" | "delivered"
+    status: 'pending' | 'canceled' | 'processing' | 'delivering' | 'delivered'
     customerName: string
     total: number
-
   }
 }
 
@@ -55,7 +51,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
           style: 'currency',
           currency: 'BRL',
         })}
-        </TableCell>
+      </TableCell>
       <TableCell>
         <Button variant="outline" size="xs">
           <ArrowRight className="mr-2 h-3 w-3" />
