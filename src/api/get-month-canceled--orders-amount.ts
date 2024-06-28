@@ -5,7 +5,7 @@ export interface GetMonthCanceledOrdersAmountResponse {
   diffFromLastMonth: number
 }
 
-export async function GetMonthCanceledOrdersAmount() {
+export async function getMonthCanceledOrdersAmount() {
   const response = await api.get<GetMonthCanceledOrdersAmountResponse>(
     '/metrics/month-canceled-orders-amount',
   )

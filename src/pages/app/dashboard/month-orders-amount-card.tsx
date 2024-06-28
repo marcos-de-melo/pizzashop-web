@@ -1,12 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import { Utensils } from 'lucide-react'
 
-import { GetMonthOrdersAmount } from '@/api/get-month-orders-amount'
+import { getMonthOrdersAmount } from '@/api/get-month-orders-amount'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function MonthOrdersAmauntCard() {
   const { data: monthOrdersAmount } = useQuery({
-    queryFn: GetMonthOrdersAmount,
+    queryFn: getMonthOrdersAmount,
     queryKey: ['metrics', 'month-orders-amount'],
   })
 

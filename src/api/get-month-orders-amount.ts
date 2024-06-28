@@ -5,7 +5,7 @@ export interface GetMonthOrdersAmountResponse {
   diffFromLastMonth: number
 }
 
-export async function GetMonthOrdersAmount() {
+export async function getMonthOrdersAmount() {
   const response = await api.get<GetMonthOrdersAmountResponse>(
     '/metrics/month-orders-amount',
   )

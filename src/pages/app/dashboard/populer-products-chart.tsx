@@ -3,16 +3,9 @@ import { BarChart } from 'lucide-react'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import colors from 'tailwindcss/colors'
 
-import { GetPopularProducts } from '@/api/get-popupar-produtcts'
+import { getPopularProducts } from '@/api/get-popupar-produtcts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-const data = [
-  { product: 'Pepperoni', amount: 40 },
-  { product: 'Mussarela', amount: 30 },
-  { product: 'Marguerita', amount: 50 },
-  { product: '4 Queijos', amount: 16 },
-  { product: 'Frango Frito', amount: 26 },
-]
 const COLORS = [
   colors.sky[500],
   colors.amber[500],
@@ -24,7 +17,7 @@ const COLORS = [
 export function PopulerProductsChart() {
   const { data: popouparProducts } = useQuery({
     queryKey: ['metrics', 'popular-products'],
-    queryFn: GetPopularProducts,
+    queryFn: getPopularProducts,
   })
   return (
     <Card className="col-span-3">
